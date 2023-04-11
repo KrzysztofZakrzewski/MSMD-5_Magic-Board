@@ -23,6 +23,10 @@ body {
   background-color: #111;
 }
 
+.container .row span {
+  display: inline-block;
+}
+
 .btns {
   position: absolute;
   top: 0;

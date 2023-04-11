@@ -67,5 +67,4 @@ function createGrid() {
 	}
 }
 
-
-createGrid()
+createGrid();

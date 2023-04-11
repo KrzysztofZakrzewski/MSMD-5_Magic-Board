@@ -18,6 +18,11 @@ body {
 	user-select: none;
 	background-color: #111;
 
+	.row {
+		span {
+			display: inline-block;
+		}
+	}
 }
 .btns {
 	position: absolute;
@@ -38,10 +43,9 @@ body {
 	}
 }
 
-
 @media (max-width: 768px) {
-	.btns{
-		button{
+	.btns {
+		button {
 			font-size: 1rem;
 			padding: 0.5rem;
 		}
