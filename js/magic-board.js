@@ -3,7 +3,7 @@ const container = document.querySelector('.container'),
 	gapSlider = document.querySelector('#gap');
 
 let spanBg = '#1e1f26',
-	shape = 'square',
+	shape = 'square', //circle, trange, diamond
 	mode = 'draw',
 	color = 'ff0000',
 	singeleColor = false,
@@ -61,6 +61,22 @@ function createGrid() {
 			span.style.margin = `${gap / 2}px`;
 			span.style.backgroundColor = spanBg;
 
+			if (shape === 'circle') {
+				span.style.borderRadius = '50%';
+			}
+
+			if (shape === 'trange') {
+				span.style.width = 0;
+				span.style.backgroundColor = 'transparent';
+				span.style.borderLeft = `${spanWidth / 2}px solid transparent`;
+				span.style.borderRight = `${spanWidth / 2}px solid transparent`;
+				span.style.borderBottom = `${spanHeight}px solid ${spanBg}`;
+			}
+
+			if (shape === 'diamond') {
+				span.style.transform = 'rotate(45deg)';
+			}
+
 			row.appendChild(span);
 		}
 		container.appendChild(row);
@@ -69,6 +85,7 @@ function createGrid() {
 
 createGrid();
 
+// Resizing grid on full window screen
 window.addEventListener('resize', () => {
-    createGrid()
-})
+	createGrid();
+});
