@@ -19,6 +19,8 @@ body {
 	background-color: #111;
 
 	.row {
+		display: flex;
+		justify-content: center;
 		span {
 			display: inline-block;
 		}

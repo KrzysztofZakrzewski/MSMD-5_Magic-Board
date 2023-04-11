@@ -23,6 +23,15 @@ body {
   background-color: #111;
 }
 
+.container .row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
 .container .row span {
   display: inline-block;
 }
