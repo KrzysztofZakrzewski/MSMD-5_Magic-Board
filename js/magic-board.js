@@ -1,6 +1,6 @@
 const container = document.querySelector('.container'),
 	size = document.querySelector('#size'),
-	gap = document.querySelector('#gap');
+	gapSlider = document.querySelector('#gap');
 
 let spanBg = '#1e1f26',
 	shape = 'square',
@@ -36,17 +36,17 @@ let spanBg = '#1e1f26',
 	];
 
 function createGrid() {
-	// container.innerHTML = '';
+	container.innerHTML = '';
 	const containerWidth = container.offsetWidth;
 	const containerHeight = container.offsetHeight;
 	const spanWidth = parseInt(size.value);
 	const spanHeight = parseInt(size.value);
-	const lap = parseInt(gap.value);
+	const gap = parseInt(gapSlider.value);
 
 	// calc the number of columns anr rows to fill the container
 
-	const colums = Math.round(containerWidth / (spanWidth + lap));
-	const rows = Math.round(containerHeight / (spanHeight + lap));
+	const colums = Math.round(containerWidth / (spanWidth + gap));
+	const rows = Math.round(containerHeight / (spanHeight + gap));
 
 	// Create span elements and add to container
 
@@ -58,7 +58,7 @@ function createGrid() {
 			const span = document.createElement('span');
 			span.style.width = `${spanWidth}px`;
 			span.style.height = `${spanHeight}px`;
-			span.style.margin = `${lap / 2}px`;
+			span.style.margin = `${gap / 2}px`;
 			span.style.backgroundColor = spanBg;
 
 			row.appendChild(span);

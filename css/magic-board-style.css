@@ -23,7 +23,7 @@ body {
   background-color: #111;
 }
 
-.container .btns {
+.btns {
   position: absolute;
   top: 0;
   right: 0;
@@ -37,7 +37,7 @@ body {
   gap: 0.2rem;
 }
 
-.container .btns button {
+.btns button {
   border: none;
   color: #fff;
   font-size: 1.5rem;
@@ -48,11 +48,11 @@ body {
 }
 
 @media (max-width: 768px) {
-  .container .btns button {
+  .btns button {
     font-size: 1rem;
     padding: 0.5rem;
   }
-  .container .btns input {
+  .btns input {
     width: 100px;
   }
 }
