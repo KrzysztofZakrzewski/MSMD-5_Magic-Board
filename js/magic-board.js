@@ -3,10 +3,10 @@ const container = document.querySelector('.container'),
 	gapSlider = document.querySelector('#gap');
 
 let spanBg = '#1e1f26',
-	shape = 'square', //circle, trange, diamond
+	shape = 'square', //circle, trianlge, diamond
 	mode = 'draw',
 	color = 'ff0000',
-	singeleColor = false,
+	singelColor = false,
 	colors = [
 		'#ff0000',
 		'#ff4000',
@@ -65,7 +65,7 @@ function createGrid() {
 				span.style.borderRadius = '50%';
 			}
 
-			if (shape === 'trange') {
+			if (shape === 'trianlge') {
 				span.style.width = 0;
 				span.style.backgroundColor = 'transparent';
 				span.style.borderLeft = `${spanWidth / 2}px solid transparent`;
@@ -89,3 +89,38 @@ createGrid();
 window.addEventListener('resize', () => {
 	createGrid();
 });
+
+// mose suport
+
+document.addEventListener('mousedown', function () {
+	document.addEventListener('mousemove', mouseMoveHandler);
+});
+
+document.addEventListener('mouseup', function () {
+	document.removeEventListener('mousemove', mouseMoveHandler);
+});
+
+function mouseMoveHandler(e) {
+	const target = e.target;
+	if (target.tagName === 'SPAN') {
+		draw(target);
+	}
+}
+
+function draw(target) {
+	// if single color on use that color only else generate random color and user
+	let randomColor = singelColor
+		? color
+		: colors[Math.floor(Math.random() * colors.length)];
+        target.style.backgroundColor = randomColor;
+
+
+        // My first change in code
+	// if (shape === 'square') {
+	// 	target.style.backgroundColor = randomColor;
+	// }
+	if (shape === 'trianlge') {
+        const spanHeight = parseInt(size.value);
+        target.style.borderBottom = `${spanHeight}px solid ${randomColor}`
+	}
+}
