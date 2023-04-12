@@ -3,7 +3,7 @@ const container = document.querySelector('.container'),
 	gapSlider = document.querySelector('#gap');
 
 let spanBg = '#1e1f26',
-	shape = 'square', //circle, trianlge, diamond
+	shape = 'square', //circle, triangle, diamond
 	mode = 'draw',
 	color = 'ff0000',
 	singelColor = false,
@@ -65,7 +65,7 @@ function createGrid() {
 				span.style.borderRadius = '50%';
 			}
 
-			if (shape === 'trianlge') {
+			if (shape === 'triangle') {
 				span.style.width = 0;
 				span.style.backgroundColor = 'transparent';
 				span.style.borderLeft = `${spanWidth / 2}px solid transparent`;
@@ -112,15 +112,13 @@ function draw(target) {
 	let randomColor = singelColor
 		? color
 		: colors[Math.floor(Math.random() * colors.length)];
-        target.style.backgroundColor = randomColor;
 
+	if (shape === 'square' || shape === 'circle' || shape === 'diamond') {
+		target.style.backgroundColor = randomColor;
+	}
 
-        // My first change in code
-	// if (shape === 'square') {
-	// 	target.style.backgroundColor = randomColor;
-	// }
-	if (shape === 'trianlge') {
-        const spanHeight = parseInt(size.value);
-        target.style.borderBottom = `${spanHeight}px solid ${randomColor}`
+	if (shape === 'triangle') {
+		const spanHeight = parseInt(size.value);
+		target.style.borderBottom = `${spanHeight}px solid ${randomColor}`;
 	}
 }
