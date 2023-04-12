@@ -3,7 +3,7 @@ const container = document.querySelector('.container'),
 	gapSlider = document.querySelector('#gap');
 
 let spanBg = '#1e1f26',
-	shape = 'square', //circle, triangle, diamond
+	shape = 'circle', //circle, triangle, diamond
 	mode = 'draw',
 	color = 'ff0000',
 	singelColor = false,
@@ -121,4 +121,12 @@ function draw(target) {
 		const spanHeight = parseInt(size.value);
 		target.style.borderBottom = `${spanHeight}px solid ${randomColor}`;
 	}
+
+    //  add glowing efekt
+
+    if (shape!== 'triangle') {
+        target.style.boxShadow = `0 0 2px ${randomColor}, 0 0 10px ${randomColor}`
+        // efect I realy like createx by acident
+        // target.style.boxShadow = `0 0 2pc ${randomColor}, 0 0 10pc ${randomColor}`
+    }
 }
