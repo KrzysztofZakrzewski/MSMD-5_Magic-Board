@@ -168,4 +168,8 @@ shapeBtn.addEventListener('click', () => {
 	}
 
 	shapeBtn.textContent = shape;
+
+	// shape change
+
+	createGrid();
 });
