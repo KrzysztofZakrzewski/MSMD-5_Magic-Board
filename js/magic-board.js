@@ -1,6 +1,7 @@
 const container = document.querySelector('.container'),
 	size = document.querySelector('#size'),
-	gapSlider = document.querySelector('#gap');
+	gapSlider = document.querySelector('#gap'),
+	modeBtn = document.querySelector('#mode');
 
 let spanBg = '#1e1f26',
 	shape = 'circle', //circle, triangle, diamond
@@ -103,7 +104,13 @@ document.addEventListener('mouseup', function () {
 function mouseMoveHandler(e) {
 	const target = e.target;
 	if (target.tagName === 'SPAN') {
-		draw(target);
+		// draw(target);
+		// erise function
+		if (mode === 'draw') {
+			draw(target);
+		} else {
+			erase(target);
+		}
 	}
 }
 
@@ -122,11 +129,29 @@ function draw(target) {
 		target.style.borderBottom = `${spanHeight}px solid ${randomColor}`;
 	}
 
-    //  add glowing efekt
+	//  add glowing efekt
 
-    if (shape!== 'triangle') {
-        target.style.boxShadow = `0 0 2px ${randomColor}, 0 0 10px ${randomColor}`
-        // efect I realy like createx by acident
-        // target.style.boxShadow = `0 0 2pc ${randomColor}, 0 0 10pc ${randomColor}`
-    }
+	if (shape !== 'triangle') {
+		target.style.boxShadow = `0 0 2px ${randomColor}, 0 0 10px ${randomColor}`;
+		// efect I realy like createx by acident
+		// target.style.boxShadow = `0 0 2pc ${randomColor}, 0 0 10pc ${randomColor}`
+	}
 }
+
+function erase(target) {
+	if (shape === 'square' || shape === 'circle' || shape === 'diamond') {
+		target.style.backgroundColor = spanBg;
+	}
+
+	if (shape === 'triangle') {
+		const spanHeight = parseInt(size.value);
+		target.style.borderBottom = `${spanHeight}px solid ${spanBg}`;
+	}
+	target.style.boxShadow = 'none';
+}
+
+modeBtn.addEventListener('click', () => {
+	// if its draw make it erase or vice versa
+	mode = mode === 'draw' ? 'erise' : 'draw';
+	modeBtn.textContent = mode;
+});
