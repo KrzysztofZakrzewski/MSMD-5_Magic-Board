@@ -194,3 +194,11 @@ colorPicker.addEventListener('change', (e) => {
 randomBtn.addEventListener('click', () => {
 	singelColor = false;
 });
+
+size.addEventListener('input', () => {
+	createGrid()
+})
+
+gapSlider.addEventListener('input', () => {
+	createGrid()
+})
