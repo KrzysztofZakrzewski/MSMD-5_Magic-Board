@@ -4,7 +4,8 @@ const container = document.querySelector('.container'),
 	modeBtn = document.querySelector('#mode'),
 	shapeBtn = document.querySelector('#shape'),
 	colorBtn = document.querySelector('#color'),
-	colorPicker = document.querySelector('#color-picker');
+	colorPicker = document.querySelector('#color-picker'),
+	randomBtn = document.querySelector('#reandom-color');
 
 let spanBg = '#1e1f26',
 	shape = 'circle', //circle, triangle, diamond
@@ -186,4 +187,10 @@ colorPicker.addEventListener('change', (e) => {
 
 	// turn on single color
 	singelColor = true;
+});
+
+// use rabdim color on random btn by click
+
+randomBtn.addEventListener('click', () => {
+	singelColor = false;
 });
