@@ -1,7 +1,8 @@
 const container = document.querySelector('.container'),
 	size = document.querySelector('#size'),
 	gapSlider = document.querySelector('#gap'),
-	modeBtn = document.querySelector('#mode');
+	modeBtn = document.querySelector('#mode'),
+	shapeBtn = document.querySelector('#shape');
 
 let spanBg = '#1e1f26',
 	shape = 'circle', //circle, triangle, diamond
@@ -154,4 +155,17 @@ modeBtn.addEventListener('click', () => {
 	// if its draw make it erase or vice versa
 	mode = mode === 'draw' ? 'erise' : 'draw';
 	modeBtn.textContent = mode;
+});
+
+shapeBtn.addEventListener('click', () => {
+	//circle, triangle, diamond
+	const shapes = ['square', 'circle', 'triangle', 'diamond'];
+	const index = shapes.indexOf(shape);
+	if (index < shapes.length - 1) {
+		shape = shapes[index + 1];
+	} else {
+		shape = shapes[0];
+	}
+
+	shapeBtn.textContent = shape;
 });
