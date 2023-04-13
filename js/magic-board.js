@@ -3,8 +3,8 @@ const container = document.querySelector('.container'),
 	gapSlider = document.querySelector('#gap'),
 	modeBtn = document.querySelector('#mode'),
 	shapeBtn = document.querySelector('#shape'),
-	colorBtn = document.querySelector('#color');
-colorPicker = document.querySelector('#color-picker');
+	colorBtn = document.querySelector('#color'),
+	colorPicker = document.querySelector('#color-picker');
 
 let spanBg = '#1e1f26',
 	shape = 'circle', //circle, triangle, diamond
