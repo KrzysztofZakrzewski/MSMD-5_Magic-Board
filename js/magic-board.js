@@ -236,7 +236,7 @@ function clear() {
 		//  TO   CHANGE!!!!!!!!!!!!!!!!!!!!!
 		setTimeout(() => {
 			erase(span)
-		}, 100);
+		}, 200);
 	});
 }
 
