@@ -106,6 +106,29 @@ document.addEventListener('mouseup', function () {
 	document.removeEventListener('mousemove', mouseMoveHandler);
 });
 
+// TOUCH SUPORT
+
+document.addEventListener('touchstart', function () {
+	document.addEventListener('touchmove', touchMoveHandle);
+});
+
+document.addEventListener('touchend', function () {
+	document.removeEventListener('touchmove', touchMoveHandle);
+});
+
+function touchMoveHandle(e) {
+	// get the touch coordinates
+	let touch = e.touches[0];
+	let targetElement = document.elementFromPoint(touch.clientX, touch.clientY);
+	if (targetElement.tagName === 'SPAN') {
+		if (mode === 'draw') {
+			draw(targetElement);
+		} else {
+			erase(targetElement);
+		}
+	}
+}
+
 function mouseMoveHandler(e) {
 	const target = e.target;
 	if (target.tagName === 'SPAN') {
@@ -117,6 +140,7 @@ function mouseMoveHandler(e) {
 			erase(target);
 		}
 	}
+
 }
 
 function draw(target) {
@@ -211,7 +235,7 @@ function clear() {
 		draw(span);
 		//  TO   CHANGE!!!!!!!!!!!!!!!!!!!!!
 		setTimeout(() => {
-			
+			erase(span)
 		}, 100);
 	});
 }
