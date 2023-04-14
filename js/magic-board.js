@@ -5,7 +5,8 @@ const container = document.querySelector('.container'),
 	shapeBtn = document.querySelector('#shape'),
 	colorBtn = document.querySelector('#color'),
 	colorPicker = document.querySelector('#color-picker'),
-	randomBtn = document.querySelector('#reandom-color');
+	randomBtn = document.querySelector('#reandom-color'),
+	clearBtn = document.querySelector('#clear');
 
 let spanBg = '#1e1f26',
 	shape = 'circle', //circle, triangle, diamond
@@ -196,9 +197,23 @@ randomBtn.addEventListener('click', () => {
 });
 
 size.addEventListener('input', () => {
-	createGrid()
-})
+	createGrid();
+});
 
 gapSlider.addEventListener('input', () => {
-	createGrid()
-})
+	createGrid();
+});
+
+function clear() {
+	// lets add a tranisition on clear
+	const spans = document.querySelectorAll('span');
+	spans.forEach((span) => {
+		draw(span);
+		//  TO   CHANGE!!!!!!!!!!!!!!!!!!!!!
+		setTimeout(() => {
+			
+		}, 100);
+	});
+}
+
+clearBtn.addEventListener('click', clear);
