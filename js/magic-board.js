@@ -226,6 +226,7 @@ colorPicker.addEventListener('change', (e) => {
 
 randomBtn.addEventListener('click', () => {
 	singelColor = false;
+	colorBtn.style.backgroundColor = '#111111'
 });
 
 size.addEventListener('input', () => {
