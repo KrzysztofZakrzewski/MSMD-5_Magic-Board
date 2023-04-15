@@ -188,7 +188,7 @@ function drawToggleErise() {
 	modeBtn.textContent = mode;
 }
 
-modeBtn.addEventListener('click', drawToggleErise);
+
 
 // modeBtn.addEventListener('click', () => {
 // 	// if its draw make it erase or vice versa
@@ -208,7 +208,7 @@ function toChangeShape() {
 	createGrid();
 }
 
-shapeBtn.addEventListener('click', toChangeShape);
+
 
 colorBtn.addEventListener('click', () => {
 	colorPicker.click();
@@ -226,21 +226,18 @@ colorPicker.addEventListener('change', (e) => {
 
 function setRadomColor() {
 	singelColor = false;
-	colorBtn.style.backgroundColor = '#111111';
+	colorBtn.style.backgroundColor = '#111111'; 
 }
 
-randomBtn.addEventListener('click', setRadomColor);
 
-function setSizeOfTheGeometricFigure() {
+
+size.addEventListener('input', () => {
 	createGrid();
-}
+});
 
-size.addEventListener('input', setSizeOfTheGeometricFigure);
-
-function setGapSizeBetweenGeometricFigure() {
+gapSlider.addEventListener('input', () => {
 	createGrid();
-}
-gapSlider.addEventListener('input', setGapSizeBetweenGeometricFigure);
+});
 
 function clear() {
 	// lets add a tranisition on clear
@@ -254,9 +251,19 @@ function clear() {
 	});
 }
 
+modeBtn.addEventListener('click', drawToggleErise);
+
+shapeBtn.addEventListener('click', toChangeShape);
+randomBtn.addEventListener('click', setRadomColor);
+
+
+// 
+
 window.addEventListener('resize', resizeingGrid);
 
 clearBtn.addEventListener('click', clear);
+
+
 
 // mose suport
 
