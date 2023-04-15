@@ -96,25 +96,25 @@ window.addEventListener('resize', () => {
 	createGrid();
 });
 
-// mose suport
+// // mose suport
 
-document.addEventListener('mousedown', function () {
-	document.addEventListener('mousemove', mouseMoveHandler);
-});
+// document.addEventListener('mousedown', function () {
+// 	document.addEventListener('mousemove', mouseMoveHandler);
+// });
 
-document.addEventListener('mouseup', function () {
-	document.removeEventListener('mousemove', mouseMoveHandler);
-});
+// document.addEventListener('mouseup', function () {
+// 	document.removeEventListener('mousemove', mouseMoveHandler);
+// });
 
-// TOUCH SUPORT
+// // TOUCH SUPORT
 
-document.addEventListener('touchstart', function () {
-	document.addEventListener('touchmove', touchMoveHandle);
-});
+// document.addEventListener('touchstart', function () {
+// 	document.addEventListener('touchmove', touchMoveHandle);
+// });
 
-document.addEventListener('touchend', function () {
-	document.removeEventListener('touchmove', touchMoveHandle);
-});
+// document.addEventListener('touchend', function () {
+// 	document.removeEventListener('touchmove', touchMoveHandle);
+// });
 
 function touchMoveHandle(e) {
 	// get the touch coordinates
@@ -244,3 +244,23 @@ function clear() {
 }
 
 clearBtn.addEventListener('click', clear);
+
+// mose suport
+
+document.addEventListener('mousedown', function () {
+	document.addEventListener('mousemove', mouseMoveHandler);
+});
+
+document.addEventListener('mouseup', function () {
+	document.removeEventListener('mousemove', mouseMoveHandler);
+});
+
+// TOUCH SUPORT
+
+document.addEventListener('touchstart', function () {
+	document.addEventListener('touchmove', touchMoveHandle);
+});
+
+document.addEventListener('touchend', function () {
+	document.removeEventListener('touchmove', touchMoveHandle);
+});
