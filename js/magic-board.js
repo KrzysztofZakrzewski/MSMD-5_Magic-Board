@@ -224,14 +224,18 @@ colorPicker.addEventListener('change', (e) => {
 
 // use rabdim color on random btn by click
 
-randomBtn.addEventListener('click', () => {
+function setRadomColor() {
 	singelColor = false;
-	colorBtn.style.backgroundColor = '#111111'
-});
+	colorBtn.style.backgroundColor = '#111111';
+}
 
-size.addEventListener('input', () => {
+randomBtn.addEventListener('click', setRadomColor);
+
+function setSizeOfTheGeometricFigure() {
 	createGrid();
-});
+}
+
+size.addEventListener('input', setSizeOfTheGeometricFigure);
 
 gapSlider.addEventListener('input', () => {
 	createGrid();
