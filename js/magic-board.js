@@ -92,9 +92,14 @@ function createGrid() {
 createGrid();
 
 // Resizing grid on full window screen
-window.addEventListener('resize', () => {
+
+function resizeingGrid() {
 	createGrid();
-});
+}
+
+// window.addEventListener('resize', () => {
+// 	createGrid();
+// });
 
 // // mose suport
 
@@ -242,6 +247,8 @@ function clear() {
 		}, 200);
 	});
 }
+
+window.addEventListener('resize', resizeingGrid);
 
 clearBtn.addEventListener('click', clear);
 
