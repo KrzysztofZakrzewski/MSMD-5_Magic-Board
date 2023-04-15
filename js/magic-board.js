@@ -89,8 +89,6 @@ function createGrid() {
 	}
 }
 
-createGrid();
-
 // Resizing grid on full window screen
 
 function resizeingGrid() {
@@ -221,6 +219,8 @@ function clear() {
 		}, 200);
 	});
 }
+
+createGrid();
 
 colorBtn.addEventListener('click', chooseSingleColor);
 
