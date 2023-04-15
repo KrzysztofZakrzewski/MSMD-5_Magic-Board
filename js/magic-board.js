@@ -140,7 +140,6 @@ function mouseMoveHandler(e) {
 			erase(target);
 		}
 	}
-
 }
 
 function draw(target) {
@@ -179,13 +178,12 @@ function erase(target) {
 	target.style.boxShadow = 'none';
 }
 
-
 function drawToggleErise() {
 	mode = mode === 'draw' ? 'erise' : 'draw';
 	modeBtn.textContent = mode;
 }
 
-modeBtn.addEventListener('click', drawToggleErise)
+modeBtn.addEventListener('click', drawToggleErise);
 
 // modeBtn.addEventListener('click', () => {
 // 	// if its draw make it erase or vice versa
@@ -193,8 +191,7 @@ modeBtn.addEventListener('click', drawToggleErise)
 // 	modeBtn.textContent = mode;
 // });
 
-shapeBtn.addEventListener('click', () => {
-	//circle, triangle, diamond
+function toChangeShape() {
 	const shapes = ['square', 'circle', 'triangle', 'diamond'];
 	const index = shapes.indexOf(shape);
 	if (index < shapes.length - 1) {
@@ -202,13 +199,11 @@ shapeBtn.addEventListener('click', () => {
 	} else {
 		shape = shapes[0];
 	}
-
 	shapeBtn.textContent = shape;
-
-	// shape change
-
 	createGrid();
-});
+}
+
+shapeBtn.addEventListener('click', toChangeShape);
 
 colorBtn.addEventListener('click', () => {
 	colorPicker.click();
@@ -243,7 +238,7 @@ function clear() {
 		draw(span);
 		//  TO   CHANGE!!!!!!!!!!!!!!!!!!!!!
 		setTimeout(() => {
-			erase(span)
+			erase(span);
 		}, 200);
 	});
 }
