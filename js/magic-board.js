@@ -186,9 +186,14 @@ function erase(target) {
 function drawToggleErise() {
 	mode = mode === 'draw' ? 'erise' : 'draw';
 	modeBtn.textContent = mode;
+	if(mode==='erise') {
+		modeBtn.style.backgroundColor = '#ffffff'
+		modeBtn.style.color = '#111111'
+	} else {
+		modeBtn.style.backgroundColor = '#111111'
+		modeBtn.style.color = '#ffffff'
+	}
 }
-
-
 
 // modeBtn.addEventListener('click', () => {
 // 	// if its draw make it erase or vice versa
@@ -208,8 +213,6 @@ function toChangeShape() {
 	createGrid();
 }
 
-
-
 colorBtn.addEventListener('click', () => {
 	colorPicker.click();
 });
@@ -226,19 +229,16 @@ colorPicker.addEventListener('change', (e) => {
 
 function setRadomColor() {
 	singelColor = false;
-	colorBtn.style.backgroundColor = '#111111'; 
+	colorBtn.style.backgroundColor = '#111111';
 }
 
-function setSizeOfTheGeometricFigure () {
+function setSizeOfTheGeometricFigure() {
 	createGrid();
 }
 
 function setGapeBetweenGeometricFigure() {
 	createGrid();
 }
-
-
-
 
 function clear() {
 	// lets add a tranisition on clear
@@ -262,14 +262,11 @@ size.addEventListener('input', setSizeOfTheGeometricFigure);
 
 gapSlider.addEventListener('input', setGapeBetweenGeometricFigure);
 
-
-// 
+//
 
 window.addEventListener('resize', resizeingGrid);
 
 clearBtn.addEventListener('click', clear);
-
-
 
 // mose suport
 
