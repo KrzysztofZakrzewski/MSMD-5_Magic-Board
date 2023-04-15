@@ -233,11 +233,12 @@ function setSizeOfTheGeometricFigure () {
 	createGrid();
 }
 
-
-
-gapSlider.addEventListener('input', () => {
+function setGapeBetweenGeometricFigure() {
 	createGrid();
-});
+}
+
+
+gapSlider.addEventListener('input', setGapeBetweenGeometricFigure);
 
 function clear() {
 	// lets add a tranisition on clear
