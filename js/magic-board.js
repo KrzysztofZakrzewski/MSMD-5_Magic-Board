@@ -180,12 +180,12 @@ function erase(target) {
 }
 
 
-function drawSwichErise() {
+function drawToggleErise() {
 	mode = mode === 'draw' ? 'erise' : 'draw';
 	modeBtn.textContent = mode;
 }
 
-modeBtn.addEventListener('click', drawSwichErise)
+modeBtn.addEventListener('click', drawToggleErise)
 
 // modeBtn.addEventListener('click', () => {
 // 	// if its draw make it erase or vice versa
