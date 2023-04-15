@@ -97,30 +97,6 @@ function resizeingGrid() {
 	createGrid();
 }
 
-// window.addEventListener('resize', () => {
-// 	createGrid();
-// });
-
-// // mose suport
-
-// document.addEventListener('mousedown', function () {
-// 	document.addEventListener('mousemove', mouseMoveHandler);
-// });
-
-// document.addEventListener('mouseup', function () {
-// 	document.removeEventListener('mousemove', mouseMoveHandler);
-// });
-
-// // TOUCH SUPORT
-
-// document.addEventListener('touchstart', function () {
-// 	document.addEventListener('touchmove', touchMoveHandle);
-// });
-
-// document.addEventListener('touchend', function () {
-// 	document.removeEventListener('touchmove', touchMoveHandle);
-// });
-
 function touchMoveHandle(e) {
 	// get the touch coordinates
 	let touch = e.touches[0];
@@ -186,20 +162,14 @@ function erase(target) {
 function drawToggleErise() {
 	mode = mode === 'draw' ? 'erise' : 'draw';
 	modeBtn.textContent = mode;
-	if(mode==='erise') {
-		modeBtn.style.backgroundColor = '#ffffff'
-		modeBtn.style.color = '#111111'
+	if (mode === 'erise') {
+		modeBtn.style.backgroundColor = '#ffffff';
+		modeBtn.style.color = '#111111';
 	} else {
-		modeBtn.style.backgroundColor = '#111111'
-		modeBtn.style.color = '#ffffff'
+		modeBtn.style.backgroundColor = '#111111';
+		modeBtn.style.color = '#ffffff';
 	}
 }
-
-// modeBtn.addEventListener('click', () => {
-// 	// if its draw make it erase or vice versa
-// 	mode = mode === 'draw' ? 'erise' : 'draw';
-// 	modeBtn.textContent = mode;
-// });
 
 function toChangeShape() {
 	const shapes = ['square', 'circle', 'triangle', 'diamond'];
