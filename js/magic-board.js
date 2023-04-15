@@ -179,11 +179,19 @@ function erase(target) {
 	target.style.boxShadow = 'none';
 }
 
-modeBtn.addEventListener('click', () => {
-	// if its draw make it erase or vice versa
+
+function drawSwichErise() {
 	mode = mode === 'draw' ? 'erise' : 'draw';
 	modeBtn.textContent = mode;
-});
+}
+
+modeBtn.addEventListener('click', drawSwichErise)
+
+// modeBtn.addEventListener('click', () => {
+// 	// if its draw make it erase or vice versa
+// 	mode = mode === 'draw' ? 'erise' : 'draw';
+// 	modeBtn.textContent = mode;
+// });
 
 shapeBtn.addEventListener('click', () => {
 	//circle, triangle, diamond
