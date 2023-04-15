@@ -229,11 +229,11 @@ function setRadomColor() {
 	colorBtn.style.backgroundColor = '#111111'; 
 }
 
-
-
-size.addEventListener('input', () => {
+function setSizeOfTheGeometricFigure () {
 	createGrid();
-});
+}
+
+
 
 gapSlider.addEventListener('input', () => {
 	createGrid();
@@ -254,7 +254,10 @@ function clear() {
 modeBtn.addEventListener('click', drawToggleErise);
 
 shapeBtn.addEventListener('click', toChangeShape);
+
 randomBtn.addEventListener('click', setRadomColor);
+
+size.addEventListener('input', setSizeOfTheGeometricFigure);
 
 
 // 
