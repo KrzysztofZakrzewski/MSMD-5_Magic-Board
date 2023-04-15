@@ -238,7 +238,7 @@ function setGapeBetweenGeometricFigure() {
 }
 
 
-gapSlider.addEventListener('input', setGapeBetweenGeometricFigure);
+
 
 function clear() {
 	// lets add a tranisition on clear
@@ -259,6 +259,8 @@ shapeBtn.addEventListener('click', toChangeShape);
 randomBtn.addEventListener('click', setRadomColor);
 
 size.addEventListener('input', setSizeOfTheGeometricFigure);
+
+gapSlider.addEventListener('input', setGapeBetweenGeometricFigure);
 
 
 // 
