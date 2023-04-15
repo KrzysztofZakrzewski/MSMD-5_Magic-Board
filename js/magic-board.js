@@ -183,17 +183,17 @@ function toChangeShape() {
 	createGrid();
 }
 
-colorBtn.addEventListener('click', () => {
+function chooseSingleColor() {
 	colorPicker.click();
-});
+}
 
-colorPicker.addEventListener('change', (e) => {
+function singleColorPicker(e) {
 	color = e.target.value;
 	colorBtn.style.backgroundColor = color;
 
 	// turn on single color
 	singelColor = true;
-});
+}
 
 // use rabdim color on random btn by click
 
@@ -221,6 +221,10 @@ function clear() {
 		}, 200);
 	});
 }
+
+colorBtn.addEventListener('click', chooseSingleColor);
+
+colorPicker.addEventListener('change', singleColorPicker);
 
 modeBtn.addEventListener('click', drawToggleErise);
 
